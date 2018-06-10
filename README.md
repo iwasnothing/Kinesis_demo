@@ -9,3 +9,4 @@ Each consumer thread will print out its own message througput.
 
 We also created 3 lambda functions (create_lambda.sh/lamda_function.py) to listen the Kinesis event to analyse the statistics: price, ship_from_region, and time taken. The function will update the statistics into DynamoDB.  The tables was created by (create_table.sh).  And the statistics will be shown by (monitor.py).
 
+The demo video can be found in youtube: https://youtu.be/aGrNBKNiaUo
