@@ -10,3 +10,5 @@ Each consumer thread will print out its own message througput.
 We also created 3 lambda functions (create_lambda.sh/lamda_function.py) to listen the Kinesis event to analyse the statistics: price, ship_from_region, and time taken. The function will update the statistics into DynamoDB.  The tables was created by (create_table.sh).  And the statistics will be shown by (monitor.py).
 
 The demo video can be found in youtube: https://youtu.be/aGrNBKNiaUo
+
+The lambda function is supposed to be called per second, but i found that due to the poor performance of dynamoDB, it took 3 sec to run for each invocation.  Therefore, there is a time lag in the statistics update on the dynamoDB.  To solve this problem, we either improve the dynamodb performance or use a faster local db solution or even put the statistics update in the consumer python script.
